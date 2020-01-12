@@ -1,0 +1,44 @@
+{% extends 'myapp/base.html' %}
+<html>
+<head>
+    {% block title %}
+    <title>Feedbacks</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+{% endblock %}
+</head>
+<body>
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="offset-2 col-md-4"style="border: 1px solid orange">
+                <form method="post">
+                <h2>Give Your Feedback..</h2>
+                {% csrf_token %}
+                {{ fform }}<br>
+                <input type="reset" value="Clear" class="btn btn-danger"style="margin-right: 200px">
+                <input type="submit" value="Submit" class="btn btn-success">
+                </form>
+            </div>
+            <div class="offset-3 col-md-3" style="border: 1px solid orange;">
+                {% if Feedbacks %}
+                    <h2>Available Feedbacks</h2><br>
+                    {% for i in Feedbacks %}
+                        {% if i.rating >= 5 and i.rating <= 10 %}
+                        <b>Name:</b>{{ i.name | capfirst }}<br>
+                        <b>Rating:</b>{{ i.rating }}<br>
+                        <b>Feedback:</b>{{ i.feedback }}<br>
+                        <b>Date:</b>{{ i.date }}<br><br>
+                        {% endif %}
+                    {% endfor %}
+                {% else %}
+                    <h2>No Feedbacks Available</h2>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+</body>
+</html>

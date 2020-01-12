@@ -1,0 +1,30 @@
+{% extends 'myapp/base.html' %}
+<html>
+<head>
+    {% block title %}
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    {% endblock %}
+{% load staticfiles %}
+</head>
+<body>
+{% block content %}
+    <style>
+    img{height: 200px;width: 400px;margin: 30px 60px}
+    </style>
+<div class="container">
+<marquee behavior="scroll" direction="down" scrollmount="100">
+    <div class="row">
+        <img src="{% static "d.jpg" %}">
+
+    </div>
+    <div class="row">
+        <img src="{% static "w.jpg" %}">
+
+    </div>
+    </marquee>
+</div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'myapp/base.html' %}
+<html>
+<head>
+    {% block title %}
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    {% endblock %}
+{% load staticfiles %}
+</head>
+<body>
+{% block content %}
+<style>
+#p1{text-indent: 50px}
+p{text-align: justify;font-size: 16px; font-family: "Verdana";line-height: 2;
+margin: 20px;color: blue}
+#div1 p{color: blue}
+#h31{color: green;text-decoration: underline}
+img{width: 200px;height: 242px}
+.pcls{margin: 0px}
+.bcls{color: black}
+h3,h5{color: deeppink}
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h3 id="h31">About the Founder</h3>
+            <p id="p1"><b>Mr K.RAJAN </b> ( M.TECH(CSE)), PostGraduate from JNTU University and
+                then started working as Associate SOFTWARE DEVELOPER
+                from TechMahindra.
+            </p>
+
+        </div>
+        <div id="div1" class="col-md-offset-1 col-md-2">
+            <img src="{% static "R.jpg" %}">
+            <h3><b>K.RAJAN</b></h3>
+            <h5><b>Python/Django Web Developer</b></h5>
+            <p class="pcls"><b class="bcls">Address:</b>MBNR,Telangana</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+</body>
+</html>

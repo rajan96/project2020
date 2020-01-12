@@ -1,0 +1,53 @@
+<html>
+<head>
+    {% block title %}
+    <title>RAJAN IT-TECHNOLOGIES</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    {% endblock %}
+</head>
+<style>
+    .container-fluid{padding: 10px;position: center;
+    border: solid orange 2px}
+    nav{float: right;
+    }
+    button{margin-right: 50px;
+        font-size: 20px;
+        background-color: lightblue;
+    }
+    a{text-decoration: none}
+    body{margin: 30px;
+        background-color: lightcyan;
+        border: lightgray 1px solid;
+    }
+    #h32 b{color: red;background-color: cyan;
+    font-size: 50px;padding: 0px 10px;border-radius: 10px;text-align: center}
+    footer{
+        position: fixed;
+        bottom: 0px;
+        text-align: center;
+        }
+
+</style>
+<body>
+<div class="container-fluid">
+<nav>
+    <button><a href="/home/">Home</a></button>
+    <button><a href="/contact/">Contact</a></button>
+    <button><a href="/services/">Services</a></button>
+    <button><a href="/gallery/">Gallery</a></button>
+    <button><a href="/feedbacks/">Feedback</a></button>
+</nav>
+<br><br>
+<h3 align="center"id="h32" style="margin-top: 10px"><b>RAJAN IT-TECHNOLOGIES</b></h3>
+
+</div>
+{% block response %}
+{% endblock %}
+{% block content %}
+{% endblock %}
+<b><footer>Plot No : 202 ,1ST Floor,TEACHERS COLONY,MAHABUBNAGAR-509001</footer></b>
+</body>
+</html>

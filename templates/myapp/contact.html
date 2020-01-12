@@ -1,0 +1,77 @@
+{% extends 'myapp/base.html' %}
+{% load staticfiles %}
+<html>
+<head>
+    {% block title %}
+    <title>Contact</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    {% endblock %}
+</head>
+<body>
+{% block content %}
+    <style>
+    td{text-align: left}
+    th{text-align: right}
+    h2,h3{text-align: center;color: blue;}
+    input,textarea{background-color: lightcyan;}
+    </style>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Give Your Details</h2>
+        <form method="POST">
+        {% csrf_token %}
+        <table class="table table-bordered">
+            <tbody>
+            <tr>
+                <th>Enter Your Name:</th>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <br>
+            <tr>
+                <th>Enter Email-Id:</th>
+                <td><input type="email" name="email_id" size=""></td>
+            </tr>
+            <tr>
+                <th>Enter Phone Number:</th>
+                <td><input type="number" name="mobile" size="50"></td>
+            </tr>
+            <tr>
+                <th>Write message:</th>
+                <td><textarea rows = "5" cols = "22" name="message"></textarea></td>
+            </tr>
+
+            <tr>
+                <td></td>
+
+                <td><input type="submit" value="Contact Me" class="btn btn-primary"></td>
+
+            </tr>
+            </tbody>
+
+        </table>
+        </form>
+        </div>
+        <div class="col-md-4">
+            <h3><b>Contact Us</b></h3><br>
+
+         <img src="{% static "cs.jpg" %}">
+            <map><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.470530240643!2d78.44194106435388!3d17.437179155957992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb90cf7fcfcea7%3A0x51e260d4d0f5d1d5!2sMaitrivanam%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1578190648728!5m2!1sen!2sin"
+                         width="400" height="350" frameborder="0" style="border:0;" allowfullscreen=""></iframe></map>
+
+            <h5><b>RAJAN IT-TECHNOLOGIES</b></h5>
+            <p>Plot No : 202, 1st Floor,</p>
+            <p>teacher's colony</p>
+            <p>MettuGada, MAHABUBNAGAR-509001.</p>
+            <p>Mobile: 9182447316</p>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+</body>
+</html>
